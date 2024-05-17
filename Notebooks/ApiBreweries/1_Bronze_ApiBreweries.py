@@ -1,10 +1,10 @@
 # Databricks notebook source
 from pyspark.sql.types import StructType, StructField, StringType
+import requests
 
 # COMMAND ----------
 
-import requests
-
+#url da API
 url = "https://api.openbrewerydb.org/breweries"
 
 # Fazer a requisição à API e obter os dados
@@ -18,20 +18,24 @@ else:
 
 # COMMAND ----------
 
-# Define o esquema com o tipo de dados apropriado
+# Define o esquema manualmente, garantindo o tipo de schema necessário:
 schema = StructType([
     StructField("id", StringType(), True),
     StructField("name", StringType(), True),
     StructField("brewery_type", StringType(), True),
+    StructField("address_1", StringType(), True),
+    StructField("address_2", StringType(), True),
+    StructField("address_3", StringType(), True),
     StructField("street", StringType(), True),
     StructField("city", StringType(), True),
-    StructField("state", StringType(), True),
+    StructField("state_province", StringType(), True),
     StructField("postal_code", StringType(), True),
     StructField("country", StringType(), True),
     StructField("longitude", StringType(), True),
     StructField("latitude", StringType(), True),
     StructField("phone", StringType(), True),
     StructField("website_url", StringType(), True),
+    StructField("state", StringType(), True),
 ])
 
 # Cria o DataFrame usando o esquema especificado
@@ -39,14 +43,13 @@ df = spark.createDataFrame(data, schema)
 
 # COMMAND ----------
 
-# Verifica se o esquema 'bronze' existe, e cria se não existir
+# Verificando se o esquema 'bronze' existe, e cria se não existir:
 if not spark.catalog._jcatalog.databaseExists("bronze"):
     spark.sql("CREATE DATABASE bronze")
 
-# Salve a tabela 'beers' no esquema:
+# Salvando a tabela 'beers' no esquema bronze:
 table_name = "bronze.beers"
 df.write.mode("overwrite").saveAsTable(table_name)
 
-# Confirme que a tabela foi criada
+# Confirmando que a tabela foi criada
 spark.catalog.listTables("bronze")
-
