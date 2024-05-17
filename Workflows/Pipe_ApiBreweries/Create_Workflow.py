@@ -4,14 +4,13 @@ import json
 
 # COMMAND ----------
 
-# URL base da API do Databricks
-base_url = "https://adb-1314509360849583.3.azuredatabricks.net/api/2.0"
+# MAGIC %run /Workspace/Workflows/Variavel
 
-# Token de acesso
-token = "dsapiad615f0f444ed1fd0b49e86ee97dc807"
+# COMMAND ----------
+
 
 # Caminho para o arquivo JSON no Databricks File System (DBFS)
-workspace_path = "/Workspace/Repos/matheusglreis_96@hotmail.com/ApiBreweries/Workflows/Pipe_ApiBreweries/Pipe_ApiBreweries.json"
+workspace_path = "./Pipe_ApiBreweries.json"
 
 # Leitura do arquivo JSON
 # Se o arquivo JSON estiver no seu sistema local, use o caminho do sistema de arquivos local
@@ -26,10 +25,10 @@ headers = {
 }
 
 # Endpoint para criar o job
-create_job_url = f"{base_url}/jobs/create"
+create_job_url = f"{base_url}/api/2.0/jobs/create"
 
 # Requisição para criar o job
-response = requests.get(create_job_url, headers=headers, json=job_config)
+response = requests.post(create_job_url, headers=headers, json=job_config)
 
 # Verifique a resposta
 if response.status_code == 200:
