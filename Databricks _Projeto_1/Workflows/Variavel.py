@@ -1,4 +1,8 @@
 # Databricks notebook source
+# MAGIC %run ./Create_Workflow
+
+# COMMAND ----------
+
 #Host_url
 base_url = "<<SUA_URL_AQUI>>"
 
@@ -7,3 +11,7 @@ token = "<<SEU_TOKEN_AQUI>>"
 
 # Seu email, certifique de estar registrado no ambiente. 
 email = "<<SEU_EMAIL_AQUI>>"
+
+# COMMAND ----------
+
+create_job(email, token, base_url)
