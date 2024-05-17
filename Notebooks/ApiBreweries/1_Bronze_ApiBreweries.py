@@ -1,5 +1,6 @@
 # Databricks notebook source
 from pyspark.sql.types import StructType, StructField, StringType
+from pyspark.sql.functions import regexp_replace
 import requests
 
 # COMMAND ----------
@@ -38,8 +39,12 @@ schema = StructType([
     StructField("state", StringType(), True),
 ])
 
-# Cria o DataFrame usando o esquema especificado
+# Cria o DataFrame usando o esquema especificado:
 df = spark.createDataFrame(data, schema)
+
+# Garante a qualidade das colunas que serão utilizadas:
+df = df.withColumn("state", regexp_replace("state", " ", "")) \
+       .withColumn("brewery_type", regexp_replace("brewery_type", " ", ""))
 
 # COMMAND ----------
 

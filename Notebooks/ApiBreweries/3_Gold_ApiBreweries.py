@@ -17,6 +17,3 @@ if not spark.catalog._jcatalog.databaseExists("ouro"):
 
 # Salvar particionado como Delta na camada 'prata'
 df_final.write.mode("overwrite").format("delta").saveAsTable("ouro.beers")
-
-# Confirmando que foi criado
-spark.catalog.listTables("ouro")
