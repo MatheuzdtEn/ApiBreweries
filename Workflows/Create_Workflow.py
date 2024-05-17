@@ -1,3 +1,15 @@
+# Databricks notebook source
+import requests
+import json
+
+# COMMAND ----------
+
+# MAGIC %run ./Variavel
+
+# COMMAND ----------
+
+# JSON definido como uma string e atribuído a uma variável
+json_config = """
 {
   "name": "Pipe_ApiBreweries",
   "email_notifications": {
@@ -26,7 +38,7 @@
       "timeout_seconds": 0,
       "email_notifications": {
         "on_failure": [
-          "matheusreis_96@hotmail.com"
+          "{email}"
         ]
       },
       "notification_settings": {
@@ -41,6 +53,33 @@
     "enabled": true
   },
   "run_as": {
-    "user_name": "matheusglreis_96@hotmail.com"
+    "user_name": "{email}"
   }
 }
+"""
+json_config = json_config.replace("{email}", email)
+
+
+# Carregar a string JSON em um dicionário Python
+job_config = json.loads(json_config)
+
+# COMMAND ----------
+
+# Cabeçalho de autenticação
+headers = {
+    "Authorization": f"Bearer {token}",
+    "Content-Type": "application/json"
+}
+
+# Endpoint para criar o job
+create_job_url = f"{base_url}/api/2.0/jobs/create"
+
+# Requisição para criar o job
+response = requests.post(create_job_url, headers=headers, json=job_config)
+
+# Verifique a resposta
+if response.status_code == 200:
+    print("Job criado com sucesso!")
+    print(response.json())
+else:
+    print(f"Erro: {response.status_code} - {response.text}")
