@@ -1,7 +1,7 @@
 # BEES Data Engineering – Breweries (DATABRICKS)
 
 ## Objetivo
-Este projeto visa consumir dados da API Open Brewery DB, transformá-los e armazená-los em um data lake seguindo a arquitetura de medallion com três camadas: bronze, prata e ouro. A solução inclui um workflow completo criado no Databricks, utilizando notebooks para cada camada do data lake.
+Este projeto visa consumir dados da API Brewery, transformá-los e armazená-los em um data lake seguindo a arquitetura de medallion com três camadas: bronze, prata e ouro. A solução inclui um workflow completo criado no Databricks, utilizando notebooks para cada camada do data lake.
 
 ## Estrutura do Projeto
 O projeto está dividido em três notebooks, cada um representando uma camada da arquitetura de medallion:
