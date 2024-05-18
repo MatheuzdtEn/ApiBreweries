@@ -1,3 +1,5 @@
+# Databricks notebook source
+# DBTITLE 1,SCRIPT RESPONSÁVEL POR OBTER/CRIAR/EXECUTAR O WORKFLOW
 import json
 import requests
 
@@ -122,3 +124,4 @@ def create_job(username, token, base_url):
         print(f"Erro ao criar o job: {response.status_code} - {response.text}")
 
     return response.json() if response.status_code == 200 else None
+
