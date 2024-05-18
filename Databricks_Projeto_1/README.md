@@ -58,9 +58,13 @@ O projeto está dividido em três notebooks, cada um representando uma camada da
 
 
   - `Token, disponivel no menu do usuário na aba programador`
+ 
+
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/fe93502d-a036-44d9-9af5-e3d72e33dfd0)
 
   - `Username, email do usuário`
+ 
+
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/e6a22145-5261-4377-b424-4ab63ad07e25)
 
 
