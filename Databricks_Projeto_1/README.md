@@ -31,6 +31,7 @@ O projeto está dividido em três notebooks, cada um representando uma camada da
 - Certifique-se de ter um ambiente Databricks configurado. Se você ainda não tem, siga as instruções (https://docs.databricks.com/getting-started/index.html) para criar um.
 
 - Em sua conta Azure, procure por Databricks, clique em criar.
+
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/6bca7aa8-bc11-4dc8-a83a-df3c5ca28a51)
 
 
@@ -38,15 +39,15 @@ O projeto está dividido em três notebooks, cada um representando uma camada da
 - Caso ainda não tenha um cluster criado, vá até a seção Clusters e crie um novo cluster. As instruções para criar um cluster podem ser encontradas.(https://docs.databricks.com/clusters/create.html).
 
 - Caminho para criação do cluster
+  
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/03b1eab4-9cd7-4e9a-9845-900b3286d9d6)
-
-
 
 ### 3. Clonar o Repositório do GitHub
 - Vá até a seção Repos no Databricks e clone este repositório:
     git clone: https://github.com/MatheuzdtEn/ApiBreweries.git
 
 - Caminho para criação do Repos:
+  
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/8cff904e-ca4b-42f9-b533-d6b4700427f6)
 
 ### 4. Vá até o notebook Variavel.py e coloque as variáveis/Credenciais para criação do Job no WORKFLOW.
