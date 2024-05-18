@@ -37,7 +37,7 @@ O projeto está dividido em três notebooks, cada um representando uma camada da
 - Vá até a seção Repos no Databricks e clone este repositório:
     git clone: https://github.com/MatheuzdtEn/ApiBreweries
 
-### 4. Vá até o notebook Variaveis.py e coloque as variáveis/Credenciais para criação do Job no WORKFLOW.
+### 4. Vá até o notebook Variavel.py e coloque as variáveis/Credenciais para criação do Job no WORKFLOW.
 
 - Variaveis:
 
