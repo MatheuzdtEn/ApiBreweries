@@ -73,8 +73,16 @@ def create_job(email, token, base_url):
     # Verificar a resposta
     if response.status_code == 200:
         print("Job criado com sucesso!")
-        return response.json()
+        # Obtendo o ID do job recém-criado
+        job_id = response.json().get("job_id")
+        # Iniciando o trigger do job recém-criado
+        start_job_url = f"{base_url}/api/2.0/jobs/run-now"
+        start_response = requests.post(start_job_url, headers=headers, json={"job_id": job_id})
+        if start_response.status_code == 200:
+            print("Trigger do job iniciado com sucesso!")
+        else:
+            print(f"Erro ao iniciar trigger do job: {start_response.status_code} - {start_response.text}")
     else:
-        print(f"Erro: {response.status_code} - {response.text}")
-        return None
+        print(f"Erro ao criar o job: {response.status_code} - {response.text}")
 
+    return response.json() if response.status_code == 200 else None
