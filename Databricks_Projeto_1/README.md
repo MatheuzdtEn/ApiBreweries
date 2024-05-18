@@ -30,20 +30,39 @@ O projeto está dividido em três notebooks, cada um representando uma camada da
 ### 1. Criar um Ambiente Databricks
 - Certifique-se de ter um ambiente Databricks configurado. Se você ainda não tem, siga as instruções (https://docs.databricks.com/getting-started/index.html) para criar um.
 
+- Em sua conta Azure, procure por Databricks, clique em criar.
+![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/6bca7aa8-bc11-4dc8-a83a-df3c5ca28a51)
+
+
 ### 2. Criar um Cluster
-- Caso ainda não tenha um cluster criado, vá até a seção Clusters e crie um novo cluster. As instruções para criar um cluster podem ser encontradas (https://docs.databricks.com/clusters/create.html).
+- Caso ainda não tenha um cluster criado, vá até a seção Clusters e crie um novo cluster. As instruções para criar um cluster podem ser encontradas.(https://docs.databricks.com/clusters/create.html).
+
+- Caminho para criação do cluster
+![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/03b1eab4-9cd7-4e9a-9845-900b3286d9d6)
+
+
 
 ### 3. Clonar o Repositório do GitHub
 - Vá até a seção Repos no Databricks e clone este repositório:
-    git clone: https://github.com/MatheuzdtEn/ApiBreweries
+    git clone: https://github.com/MatheuzdtEn/ApiBreweries.git
+
+- Caminho para criação do Repos:
+![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/8cff904e-ca4b-42f9-b533-d6b4700427f6)
 
 ### 4. Vá até o notebook Variavel.py e coloque as variáveis/Credenciais para criação do Job no WORKFLOW.
 
 - Variaveis:
 
   - `URL Base do seu databricks`
+![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/99212dcf-48f1-45cf-b06f-649ab6107f21)
+
+
   - `Token, disponivel no menu do usuário na aba programador`
+![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/fe93502d-a036-44d9-9af5-e3d72e33dfd0)
+
   - `Username, email do usuário`
+![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/e6a22145-5261-4377-b424-4ab63ad07e25)
+
 
 Obs: Caso não tenha seguido os passos 1 e 2. Certifique-se de ter as permissões necessários do usuário.
 
@@ -54,7 +73,7 @@ Obs: Caso não tenha seguido os passos 1 e 2. Certifique-se de ter as permissõe
     - `bronze.beers`
     - `silver.beers`
     - `gold.beers`
-
+    - 
 - Todos os dados estão no formato Delta para otimizar a leitura e consulta. Os logs também ficam disponíveis para visualizaçã e podem ser vistos no catálogo.
 
 - O workflow cobre todas as etapas desde a extração dos dados da API até a criação da visualização agregada e possibilita realizar 
