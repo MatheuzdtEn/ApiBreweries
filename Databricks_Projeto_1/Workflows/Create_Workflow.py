@@ -2,7 +2,7 @@
 import json
 import requests
 
-def create_job(email, token, base_url):
+def create_job(username, token, base_url):
     # JSON definido como uma string e atribuído a uma variável
     json_config = """
     {
@@ -13,27 +13,27 @@ def create_job(email, token, base_url):
       "webhook_notifications": {},
       "timeout_seconds": 0,
       "schedule": {
-        "quartz_cron_expression": "17 1 5 * * ?",
+        "quartz_cron_expression": "49 0 4 * * ?",
         "timezone_id": "America/Sao_Paulo",
         "pause_status": "UNPAUSED"
       },
       "max_concurrent_runs": 1,
       "tasks": [
         {
-          "task_key": "Pipe_ApiBreweries",
+          "task_key": "BeerPipeApiBreweries",
           "run_if": "ALL_SUCCESS",
           "notebook_task": {
-            "notebook_path": "/Workspace/AMBEV/ApiBreweries/Pipeline__ApiBreweries",
-            "source": "WORKSPACE"
+            "notebook_path": "Databricks_Projeto_1/Notebooks/ApiBreweries/Pipeline__ApiBreweries",
+            "source": "GIT"
           },
           "existing_cluster_id": "0516-195718-ycordw6n",
           "max_retries": 2,
-          "min_retry_interval_millis": 900000,
+          "min_retry_interval_millis": 0,
           "retry_on_timeout": false,
           "timeout_seconds": 0,
           "email_notifications": {
             "on_failure": [
-              "{email}"
+              "{username}"
             ]
           },
           "notification_settings": {
@@ -44,16 +44,21 @@ def create_job(email, token, base_url):
           "webhook_notifications": {}
         }
       ],
+      "git_source": {
+        "git_url": "https://github.com/MatheuzdtEn/ApiBreweries.git",
+        "git_provider": "gitHub",
+        "git_branch": "main"
+      },
       "queue": {
         "enabled": true
       },
       "run_as": {
-        "user_name": "{email}"
+        "user_name": "{username}"
       }
     }
     """
-    # Substituir placeholders no JSON pela variável email
-    json_config = json_config.replace("{email}", email)
+    # Substituir placeholders no JSON pelo nome de usuário
+    json_config = json_config.replace("{username}", username)
 
     # Carregar a string JSON em um dicionário Python
     job_config = json.loads(json_config)
@@ -86,3 +91,4 @@ def create_job(email, token, base_url):
         print(f"Erro ao criar o job: {response.status_code} - {response.text}")
 
     return response.json() if response.status_code == 200 else None
+
