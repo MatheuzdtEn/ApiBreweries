@@ -45,6 +45,8 @@ O projeto está dividido em três notebooks, cada um representando uma camada da
   - `Token, disponivel no menu do usuário na aba programador`
   - `Username, email do usuário`
 
+Obs: Caso não tenha seguido os passos 1 e 2. Certifique-se de ter as permissões necessários do usuário.
+
 ### 5. Executar o Notebook Variavel.py
 
 ### 6. Verificar os Resultados
