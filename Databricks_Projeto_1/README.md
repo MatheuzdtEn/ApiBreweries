@@ -55,6 +55,7 @@ O projeto está dividido em três notebooks, cada um representando uma camada da
 - Variaveis:
 
   - `URL Base do seu databricks`
+    
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/99212dcf-48f1-45cf-b06f-649ab6107f21)
 
 
