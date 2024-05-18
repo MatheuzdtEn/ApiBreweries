@@ -10,8 +10,8 @@ base_url = "<<SUA_URL_AQUI>>"
 token = "<<SEU_TOKEN_AQUI>>"
 
 # Seu email, certifique de estar registrado no ambiente. 
-email = "<<SEU_EMAIL_AQUI>>"
+username = "<<SEU_EMAIL_AQUI>>"
 
 # COMMAND ----------
 
-create_job(email, token, base_url)
+create_job(username, token, base_url)
