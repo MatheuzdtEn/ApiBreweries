@@ -21,7 +21,7 @@ O projeto está dividido em três notebooks, cada um representando uma camada da
 
 ### Notebooks Auxiliares:
 - **Pipeline__ApiBreweries.py**: Este notebook fica responsável por executar os três notebooks das camadas, possibilitando uma visão completa do pipeline.
-- **Create_Workflow.py**: Este notebook contém o código para criar o workflow no ambiente Databricks.
+- **Create_Workflow.py**: Este notebook contém o Script para criar o workflow no ambiente Databricks. (Utiliza-se das API's do databricks para encontrar o ID_Cluster, criar o Job e iniciar o Job)
 - **Variavel.py**: Este notebook será utilizado pelo usuário para incluir os parâmetros de criação do Workflow.
 
 
