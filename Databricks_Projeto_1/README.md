@@ -41,9 +41,9 @@ O projeto está dividido em três notebooks, cada um representando uma camada da
 
 - Variaveis:
 
-  `URL Base do seu databricks`
-  `Token, disponivel no menu do usuário na aba programador`
-  `username, email do usuário`
+  - `URL Base do seu databricks`
+  - `Token, disponivel no menu do usuário na aba programador`
+  - `Username, email do usuário`
 
 ### 5. Executar o Notebook Variavel.py
 
