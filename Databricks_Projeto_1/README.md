@@ -25,7 +25,7 @@ O projeto está dividido em três notebooks, cada um representando uma camada da
 - **Variavel.py**: Este notebook será utilizado pelo usuário para incluir os parâmetros de criação do Workflow.
 
 
-COMO DAR INICIO:
+##COMO DAR INICIO:
 
 ### 1. Criar um Ambiente Databricks
 - Certifique-se de ter um ambiente Databricks configurado. Se você ainda não tem, siga as instruções (https://docs.databricks.com/getting-started/index.html) para criar um.
@@ -41,15 +41,16 @@ COMO DAR INICIO:
 
 ### 5. Executar o Notebook Variavel.py
 
-### 6. Execute o JOB disponível no WORKFLOW.
-
-
-###7. Verificar os Resultados
+### 6. Verificar os Resultados
 - Após a conclusão do workflow, os dados estarão disponíveis no catálogo do Databricks com os seguintes nomes:
     - `bronze.beers`
     - `silver.beers`
     - `gold.beers`
+
 - Todos os dados estão no formato Delta para otimizar a leitura e consulta.
-- O workflow cobre todas as etapas desde a extração dos dados da API até a criação da visualização agregada e possibilita realizar Monitoramento e Alerta
+
+- O workflow cobre todas as etapas desde a extração dos dados da API até a criação da visualização agregada e possibilita realizar 
+o monitoramento e Alerta de falha.
+
 - Todos os notebooks foram testados e estão funcionando conforme o esperado.
 
