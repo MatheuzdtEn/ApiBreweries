@@ -74,16 +74,26 @@ Obs: Caso não tenha seguido os passos 1 e 2. Certifique-se de ter as permissõe
 
 ### 5. Executar o Notebook Variavel.py
 
+![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/add5f3bc-9651-492a-b6f2-d0f6afa1e1e5)
+
+
 ### 6. Verificar os Resultados
 - Após a conclusão do workflow, os dados estarão disponíveis no catálogo do Databricks com os seguintes nomes:
+
     - `bronze.beers`
     - `silver.beers`
     - `gold.beers`
-    - 
-- Todos os dados estão no formato Delta para otimizar a leitura e consulta. Os logs também ficam disponíveis para visualizaçã e podem ser vistos no catálogo.
+
+![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/a7169e4f-2a2f-4229-a546-133b8d5137eb)
+
+
+
+- Todos os dados estão no formato Delta para otimizar a leitura e consulta. Os logs também ficam disponíveis para visualização e podem ser vistos no catálogo.
 
 - O workflow cobre todas as etapas desde a extração dos dados da API até a criação da visualização agregada e possibilita realizar 
 o monitoramento e Alerta de falha.Em caso de falha será enviado um e-mail para o usuário,  três tentativas serão realizadas.Acompanhe também o tempo de execução do pipeline.
+
+![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/d41c2171-7e28-4448-b337-2de96860a3d5)
 
 - Todos os notebooks foram testados e estão funcionando conforme o esperado.
 
