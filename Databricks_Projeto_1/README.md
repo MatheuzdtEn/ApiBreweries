@@ -37,7 +37,13 @@ O projeto está dividido em três notebooks, cada um representando uma camada da
 - Vá até a seção Repos no Databricks e clone este repositório:
     git clone: https://github.com/MatheuzdtEn/ApiBreweries
 
-### 4. Vá até o notebook Variaveis.py e coloque as variáveis/Credenciais para criação do Job no WORKFLOW:
+### 4. Vá até o notebook Variaveis.py e coloque as variáveis/Credenciais para criação do Job no WORKFLOW.
+
+- Variaveis:
+
+  `URL Base do seu databricks`
+  `Token, disponivel no menu do usuário na aba programador`
+  `username, email do usuário`
 
 ### 5. Executar o Notebook Variavel.py
 
@@ -47,10 +53,10 @@ O projeto está dividido em três notebooks, cada um representando uma camada da
     - `silver.beers`
     - `gold.beers`
 
-- Todos os dados estão no formato Delta para otimizar a leitura e consulta.
+- Todos os dados estão no formato Delta para otimizar a leitura e consulta. Os logs também ficam disponíveis para visualizaçã e podem ser vistos no catálogo.
 
 - O workflow cobre todas as etapas desde a extração dos dados da API até a criação da visualização agregada e possibilita realizar 
-o monitoramento e Alerta de falha.
+o monitoramento e Alerta de falha.Em caso de falha será enviado um e-mail para o usuário,  três tentativas serão realizadas.Acompanhe também o tempo de execução do pipeline.
 
 - Todos os notebooks foram testados e estão funcionando conforme o esperado.
 
