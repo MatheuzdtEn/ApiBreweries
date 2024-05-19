@@ -6,7 +6,7 @@ Este projeto visa consumir dados da API Brewery, transformá-los e armazená-los
 ## Estrutura do Projeto
 O projeto está dividido em três notebooks, cada um representando uma camada da arquitetura de medallion:
 1. **Bronze Layer**: Armazena os dados brutos da API.
-- **Descrição**: Este notebook consome dados da API Open Brewery DB e os armazena na camada bronze do data lake.
+- **Descrição**: Este notebook consome dados da API Brewery e os armazena na camada bronze do data lake.
 - **Armazenamento**: Os dados são armazenados no catálogo do Databricks sob o nome `bronze.beers`.
 
 2. **Silver Layer**: Transforma os dados para um formato colunar e particiona por localização.
