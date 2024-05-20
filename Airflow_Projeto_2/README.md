@@ -48,7 +48,7 @@ O objetivo deste projeto é implementar uma pipeline de ETL (Extract, Transform,
       ```sh
       docker-compose up airflow-init
       ```
-    - Após a finalização do comando anterior, garantindo que o ambiente está Ok:
+    - Após a finalização do comando anterior, inicie e execute os serviços definidos do docker-compose.yml:
       ```sh
       docker-compose up
       ```
