@@ -16,7 +16,7 @@ O objetivo deste projeto é implementar uma pipeline de ETL (Extract, Transform,
 
 - **Transformar Dados**: Os dados são transformados, adicionando uma coluna de data de processamento e substituindo espaços em branco por underscores nas colunas `country` e `state`.
 
-- **Persistir Dados na Camada Silver**: Os dados transformados são salvos em arquivos Parquet particionados pela coluna `dt_process`.
+- **Persistir Dados na Camada Silver**: Os dados transformados são salvos em arquivos Parquet particionados pela coluna `dt_process` e `state`.
 
 #### Camada Gold
 - **Ler Dados da Camada Silver**: O pipeline lê os dados salvos na camada silver.
