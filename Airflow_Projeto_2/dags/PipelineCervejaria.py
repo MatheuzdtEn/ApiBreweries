@@ -39,7 +39,7 @@ def extrair_dados_da_api():
     df = pd.DataFrame.from_dict(todos_os_dados)
     return df
 
-# Persistir dados na camada bronze
+# Salva os dados na camada bronze
 def persistir_dados_bronze(ti):
     df = ti.xcom_pull(task_ids='extrair_dados_da_api')
     dt = datetime.now().strftime('%Y%m%d')
@@ -88,7 +88,7 @@ def transformar_dados(ti):
 def persistir_dados_silver(ti):
     df = ti.xcom_pull(task_ids='transformar_dados')
     # Garantir que o DataFrame contenha as colunas necessárias
-    colunas_necessarias = ['dt_process']
+    colunas_necessarias = ['dt_process', 'state']
     for col in colunas_necessarias:
         if col not in df.columns:
             raise ValueError(f"Coluna {col} está faltando no DataFrame")
@@ -103,7 +103,7 @@ def persistir_dados_silver(ti):
     df.to_parquet(diretorio_destino, partition_cols=colunas_necessarias, engine='pyarrow', compression='gzip')
 
     # Verificar se o arquivo foi escrito corretamente
-    caminho_parquet = f'{diretorio_destino}/dt_process={df["dt_process"].iloc[0]}'
+    caminho_parquet = f'{diretorio_destino}/dt_process={df["dt_process"].iloc[0]}/state={df["state"].iloc[0]}'
     if os.path.exists(caminho_parquet):
         print(f"Dados persistidos com sucesso em {caminho_parquet}")
     else:
@@ -148,7 +148,7 @@ def agregar_dados_por_localizacao(ti):
 
 
 # Definição do DAG
-with DAG('pipeline_Cervejaria', start_date=datetime(2024, 4, 15, 6, 0, 0), schedule_interval='@daily', catchup=False) as dag:
+with DAG('pipeline_Cervejaria', start_date=datetime(2024, 5, 18, 6, 0, 0), schedule_interval='@daily', catchup=False) as dag:
     
     # Tarefa para extrair dados da API
     tarefa_extrair_dados_da_api = PythonOperator(
