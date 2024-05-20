@@ -45,6 +45,8 @@ O objetivo deste projeto é implementar uma pipeline de ETL (Extract, Transform,
     ```
 2. **Inicie o Airflow com Docker**:
     - Abra o terminal (cmd) e execute o comando, para dar inicio ao ambiente:
+      
+    - Certifique de estar na pasta do projeto Airflow_Projeto_2.
       ```sh
       docker-compose up airflow-init
       ```
