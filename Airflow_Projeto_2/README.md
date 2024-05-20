@@ -38,7 +38,7 @@ O objetivo deste projeto é implementar uma pipeline de ETL (Extract, Transform,
 - **Editor de código**: Qualquer editor de código para visualização.
 ### Passos para Execução
 
-1. **Clone o repositório**:
+1. **Clone o repositório ou baixe o arquivo**:
     ```sh
     git clone https://github.com/MatheuzdtEn/ApiBreweries.git
     
