@@ -75,40 +75,40 @@ Pipeline criado e executado com sucesso.
 
 # Explicação dos códigos:
 
-### Função Global:
+#### - Função Global:
 DataDeProcessamento - Utilizada para identiicação do dia de processamento.
 
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/193946e6-3ba0-455c-b898-64142b57d96e)
 
 
 ### 1. BRONZE:
-### extrair_dados_da_api - Extrai a API paginada.
+#### - extrair_dados_da_api - Extrai a API paginada.
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/3c0d61b1-073c-41e4-8e51-58e844feef25)
 
 
-### persistir_dados_bronze - Salva os dados na camada Bronze
+#### - persistir_dados_bronze - Salva os dados na camada Bronze
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/02c42115-a8da-440f-b043-ead5682a6d51)
 
 ### 2.PRATA
-### ler_dados_bronze - lê dados na bronze, garantindo os schemas corretamente.
+#### - ler_dados_bronze - lê dados na bronze, garantindo os schemas corretamente.
 
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/7e215326-9c6e-45a1-80ab-00365eab8708)
 
-### transformar_dados - Garante que não existe espacamento indevidos, inclui a coluna de data.
+#### - transformar_dados - Garante que não existe espacamento indevidos, inclui a coluna de data.
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/d84f79f0-f8ae-47be-ba1d-b219376bc195)
 
-### persistir_dados_silver - Dados carregados na SILVER. Fiz a inclusão da verificação das colunas que serão particionadas na gravação.
+#### - persistir_dados_silver - Dados carregados na SILVER. Fiz a inclusão da verificação das colunas que serão particionadas na gravação.
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/a7cb69e4-84bd-4ee1-be8d-841e29a57196)
 
 ### 3.GOLD
-### ler_dados_silver - Leitura dos dados da PRATA. Incluso no código a leitura de toda pasta e subpasta da Silver, garantindo que o todas as partições serão lidas.
+#### - ler_dados_silver - Leitura dos dados da PRATA. Incluso no código a leitura de toda pasta e subpasta da Silver, garantindo que o todas as partições serão lidas.
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/1e055eed-927c-4165-b925-3e40f9a2e3fa)
 
-### agregar_dados_por_localizacao - GroupBy realizado por ['state', 'brewery_type]
+#### - agregar_dados_por_localizacao - GroupBy realizado por ['state', 'brewery_type]
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/5c04c02e-7257-43d1-8d39-f9930971f719)
 
 ### 4.DAG 
-### Orquestração paralela, agendada diariamente as 6:00 AM
+#### - Orquestração paralela, agendada diariamente as 6:00 AM
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/016c5347-3ca5-4bdf-b42d-c2a61e316d9b)
 
 
