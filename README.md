@@ -1,6 +1,6 @@
-# Case Study: BEES A Melhor e Maior Cervejaria do Mundo 🍻
+# Case Study: BEES A Maior Cervejaria do Mundo 🍻
 
-##### Este repositório contém dois projetos para a melhor e maior cervejaria do mundo. O projeto demonstram duas soluções completas de engenharia de dados.
+##### Este repositório contém dois projetos para a BEES. Os projetos demonstram duas soluções completas de engenharia de dados.
 
 ###Visão Geral dos projetos:
 
