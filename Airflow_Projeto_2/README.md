@@ -64,11 +64,13 @@ O objetivo deste projeto é implementar uma pipeline de ETL (Extract, Transform,
     - Ative e execute o DAG.
       
 Pipeline criado e executado com sucesso.
+
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/ca7b8580-88de-40e3-9531-1da3e4352644)
 
 
 
 Dados persistidos com sucesso.
+
 ![image](https://github.com/MatheuzdtEn/ApiBreweries/assets/106482156/db01f00c-478d-49bb-95e9-b7aa657a5f71)
 
 
