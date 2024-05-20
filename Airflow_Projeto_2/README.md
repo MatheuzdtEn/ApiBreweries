@@ -7,7 +7,7 @@ O objetivo deste projeto é implementar uma pipeline de ETL (Extract, Transform,
 ## Estrutura do Projeto:
 
 #### Camada Bronze
-- **Extrair Dados da API**: A pipeline extrai dados da API Brewery com paginação.
+- **Extrair Dados da API**: O pipeline extrai dados da API Brewery com paginação.
 
 - **Persistir Dados na Camada Bronze**: Os dados extraídos são salvos em arquivos JSON na camada bronze.
 
@@ -19,7 +19,7 @@ O objetivo deste projeto é implementar uma pipeline de ETL (Extract, Transform,
 - **Persistir Dados na Camada Silver**: Os dados transformados são salvos em arquivos Parquet particionados pela coluna `dt_process`.
 
 #### Camada Gold
-- **Ler Dados da Camada Silver**: A pipeline lê os dados salvos na camada silver.
+- **Ler Dados da Camada Silver**: O pipeline lê os dados salvos na camada silver.
 
 - **Agregar Dados por Localização**: Os dados são agregados por `state` e `brewery_type`, contando o número de cervejarias por tipo e localização.
 
@@ -35,7 +35,7 @@ O objetivo deste projeto é implementar uma pipeline de ETL (Extract, Transform,
 ### Pré-requisitos
 
 - **Docker**: Certifique-se de ter o Docker instalado em sua máquina.
-- **Editor de código**: Utilizado o VSCODE para analise do código.
+- **Editor de código**: Qualquer editor de código para visualização.
 ### Passos para Execução
 
 1. **Clone o repositório**:
