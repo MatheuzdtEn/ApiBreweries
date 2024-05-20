@@ -63,4 +63,11 @@ O objetivo deste projeto é implementar uma pipeline de ETL (Extract, Transform,
     - Procure pelo pipeline com o nome `pipeline_Cervejaria`.
     - Ative e execute o DAG.
 
+2. **Finalize o Docker**:
+    - Abra o terminal (cmd) e execute o comando, para dar fim ao ambiente:
+      ```sh
+      docker-compose down
+      ```
+   
+
 
