@@ -2,7 +2,7 @@
 
 ## Objetivo do Projeto
 
-O objetivo deste projeto é implementar uma pipeline de ETL (Extract, Transform, Load) usando Apache Airflow para automatizar a coleta, transformação e armazenamento de dados de cervejarias. A pipeline extrai dados da API Brewery, transforma e persiste os dados processados em um data lake em três camadas: bronze, silver e gold.
+O objetivo deste projeto é implementar uma pipeline de ETL (Extract, Transform, Load) usando Apache Airflow para automatizar a coleta, transformação e armazenamento de dados. O pipeline extrai dados da API Brewery, transforma e persiste os dados processados em um data lake em três camadas: bronze, silver e gold.
 
 ## Estrutura do Projeto:
 
