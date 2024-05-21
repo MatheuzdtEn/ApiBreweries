@@ -138,8 +138,8 @@ def ler_dados_silver():
 def agregar_dados_por_localizacao(ti):
     df = ti.xcom_pull(task_ids='ler_dados_silver')
     vw_localizacao = df.groupby(['state_province', 'brewery_type'])['id'].count().reset_index()
-    vw_localizacao.columns = ['state_province', 'brewery_type', 'number']
-    vw_localizacao = vw_localizacao.sort_values(by='number', ascending=False)
+    vw_localizacao.columns = ['state_province', 'brewery_type', 'contagem']
+    vw_localizacao = vw_localizacao.sort_values(by='contagem', ascending=False)
     vw_localizacao = DataDeProcessamento(vw_localizacao)
 
     # Salvando o resultado:
@@ -148,7 +148,7 @@ def agregar_dados_por_localizacao(ti):
 
 
 # Definição do DAG
-with DAG('pipeline_Cervejaria', start_date=datetime(2024, 5, 18, 6, 0, 0), schedule_interval='@daily', catchup=False) as dag:
+with DAG('pipeline_Cervejaria', start_date=datetime(2024, 5, 18, 2, 0, 0), schedule_interval='@daily', catchup=False) as dag:
     
     # Tarefa para extrair dados da API
     tarefa_extrair_dados_da_api = PythonOperator(
